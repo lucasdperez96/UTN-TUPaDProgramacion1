@@ -130,3 +130,37 @@ longitud = len(texto)
 ultima_letra = str.upper(texto[longitud-1]) #convierto siempre a mayuscula para simplificar validacion
 salida = texto+"!" if ultima_letra == "A" or ultima_letra == "E" or ultima_letra == "I" or ultima_letra == "O" or ultima_letra == "U" else texto #Uso operador ternario para variar un poco
 print(salida)
+
+# 8) Escribir un programa que solicite al usuario que ingrese su nombre y el número 1, 2 o 3
+# dependiendo de la opción que desee:
+# 1. Si quiere su nombre en mayúsculas. Por ejemplo: PEDRO.
+# 2. Si quiere su nombre en minúsculas. Por ejemplo: pedro.
+# 3. Si quiere su nombre con la primera letra mayúscula. Por ejemplo: Pedro.
+# El programa debe transformar el nombre ingresado de acuerdo a la opción seleccionada por el
+# usuario e imprimir el resultado por pantalla. Nota: investigue uso de las funciones upper(),
+# lower() y title() de Python para convertir entre mayúsculas y minúsculas.
+
+# upper() convierte texto en mayúscula, lower() en minúscula, title() cambia el inicio de cada palabra a mayuscula y luego todo el resto a minuscula,
+# agrego capitalize() que es parecida a title() pero lo hace sobre solo la primer palabra.
+# ahora bien, como sabe title() donde empieza cada palabra?
+# title() en Python detecta el inicio de cada palabra usando los separadores de palabras, que son principalmente:
+# -Espacios (" ")
+# -Signos de puntuación (como . , ; : ! ? -)
+# -Saltos de línea o tabulaciones
+# Básicamente, cualquier carácter que no sea una letra ni un número marca un posible “corte” y hace que la siguiente letra sea mayúscula.
+
+nombre = input("Ingrese su nombre: ")
+print()
+valor = int(input("Ahora ingrese uno de los siguientes valores:\n1. Si quiere su nombre en mayúsculas. Por ejemplo: PEDRO.\n2. Si quiere su nombre en minúsculas. Por ejemplo: pedro.\n3. Si quiere su nombre con la primera letra mayúscula. Por ejemplo: Pedro."))
+
+# Aprovechando que estamos en version posterior a la 3.10 de python voy a usar match en lugar de un if anidado
+
+match valor :
+    case 1:
+        print(str.upper(nombre))
+    case 2:
+        print(str.lower(nombre))
+    case 3:
+        print(str.title(nombre))
+    case _:
+        print("Usted ingreso un valor distinto a 1, 2 o 3")
