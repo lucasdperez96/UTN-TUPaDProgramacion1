@@ -116,3 +116,17 @@ elif media == mediana == moda :
     print("Sesgo positivo")
 else : 
     print("No cumple las condiciones")
+
+# 7) Escribir un programa que solicite una frase o palabra al usuario. Si el string ingresado
+# termina con vocal, añadir un signo de exclamación al final e imprimir el string resultante por
+# pantalla; en caso contrario, dejar el string tal cual lo ingresó el usuario e imprimirlo por
+# pantalla.
+
+#Para resolver esto voy a interpretar a el string ingresado como un vector de caracteres.
+#Tambien voy a hacer uso de las funciones str.upper() y str.lower() para simplificar un poco el codigo
+
+texto = input("Ingrese una frase o palabra: ")
+longitud = len(texto)
+ultima_letra = str.upper(texto[longitud-1]) #convierto siempre a mayuscula para simplificar validacion
+salida = texto+"!" if ultima_letra == "A" or ultima_letra == "E" or ultima_letra == "I" or ultima_letra == "O" or ultima_letra == "U" else texto #Uso operador ternario para variar un poco
+print(salida)
