@@ -1,8 +1,8 @@
 # ===============================================
-# Trabajo Práctico 1: Estructuras secuenciales
+# Trabajo Práctico 3: Estructuras condicionales
 # Nombre y Apellido: Lucas Daniel Perez
 # DNI: 39656325
-# Fecha de entrega: 18/08/2025
+# Fecha de entrega: 31/08/2025
 # ===============================================
 
 # Actividades
