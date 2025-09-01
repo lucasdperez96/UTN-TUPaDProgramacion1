@@ -122,7 +122,7 @@ else :
 # pantalla; en caso contrario, dejar el string tal cual lo ingresó el usuario e imprimirlo por
 # pantalla.
 
-#Para resolver esto voy a interpretar a el string ingresado como un vector de caracteres.
+#Para resolver esto voy a interpretar a el string ingresado como una lista de caracteres.
 #Tambien voy a hacer uso de las funciones str.upper() y str.lower() para simplificar un poco el codigo
 
 texto = input("Ingrese una frase o palabra: ")
@@ -191,3 +191,43 @@ elif magnitud >= 6 and magnitud < 7 :
     print(""""Muy Fuerte" (puede causar daños significativos).""")
 else :
     print(""""Extremo" (puede causar graves daños a gran escala).""")
+
+# 10) Utilizando la información aportada en la siguiente tabla sobre las estaciones del año
+# +--------------------------------------------------------+-------------------------------+-------------------------------+
+# | Periodo del año                                        | Hemisferio Norte              | Hemisferio Sur                |
+# +--------------------------------------------------------+-------------------------------+-------------------------------+
+# | Desde el 21 de diciembre hasta el 20 de marzo          | Invierno                      | Verano                        |
+# | Desde el 21 de marzo hasta el 20 de junio              | Primavera                     | Otoño                         |
+# | Desde el 21 de junio hasta el 20 de septiembre         | Verano                        | Invierno                      |
+# | Desde el 21 de septiembre hasta el 20 de diciembre     | Otoño                         | Primavera                     |
+# +--------------------------------------------------------+-------------------------------+-------------------------------+
+# Escribir un programa que pregunte al usuario en cuál hemisferio se encuentra (N/S), qué mes
+# del año es y qué día es. El programa deberá utilizar esa información para imprimir por pantalla
+# si el usuario se encuentra en otoño, invierno, primavera o verano.
+
+hemisferio = input("Ingrese el hemisferio en el que se encuentra (N/S): ").upper()
+hemisferio = hemisferio[0] #Por si ingresan una palabra me quedo solo una letra
+
+# para no complicarme de momento asumo que el usuario colocará valores en el rango especificado
+mes = int(input("Ingrese el mes del año en formato numerico (numero de 1 a 12): "))
+dia = int(input("que dia es hoy (numero de 1 a 31): "))
+
+# Dos listas que me permiten saber la estacion segun el emisferio
+norte = ["Invierno","Primavera","Verano","Otoño"]
+sur = ["Verano","Otoño","Invierno","Primavera"]
+
+# Setea la lista segun el emisferio elegido 
+lista_estaciones = norte if hemisferio == 'N' else sur
+
+# Necesito que el indice me coincida para cada trimestre del año entoces:
+# si el mes es enero : 1 % 3 != 0 -> 1 // 3 = 0
+# si el mes es febrero : 2 % 3 != 0 -> 2 // 3 = 0
+# si el mes es marzo : 1 % 3 == 0 -> 3 // 3 = 1 (este valor no me sirve, restamos uno para que entre en el primer trimestre)
+indice_estaciones = mes // 3 if (mes % 3 != 0 ) else (mes // 3) -1
+
+if dia >= 21 :
+    # Si el indice de estaciones es igual al tamaño de la lista de estaciones quiere decir que debo reiniciar el ciclo (volver al principio de la lista)
+    print(lista_estaciones[indice_estaciones+1]) if indice_estaciones+1<len(lista_estaciones) else print(lista_estaciones[0])
+else :
+    print(lista_estaciones[indice_estaciones])
+    
