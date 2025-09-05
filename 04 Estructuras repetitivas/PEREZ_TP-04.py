@@ -93,3 +93,33 @@ suma+=numero
 
 print(f"Resultado:\n{strSuma} = {suma}")
 
+# 8) Escribe un programa que permita al usuario ingresar 100 números enteros. Luego, el
+# programa debe indicar cuántos de estos números son pares, cuántos son impares, cuántos son
+# negativos y cuántos son positivos. (Nota: para probar el programa puedes usar una cantidad
+# menor, pero debe estar preparado para procesar 100 números con un solo cambio).
+
+# La consigna no aclara si hay que hacer distincion de numeros repetidos, yo decidí que no se distinguen
+n=100
+print(f"El siguiente programa le pedira el ingreso de {n} numeros y los contará segun sean: ")
+print("-Positivos\n-Negativos\n-Pares\n-Impares")
+print()
+positivo=0
+negativo=0
+par=0
+impar=0
+numero=0
+
+for x in range( 0 , n ) :
+    numero=int(input("Ingrese un numero: "))
+    if numero >=0 :
+        positivo += 1
+    else :
+        negativo += 1
+    if numero % 2 == 0 :
+        par += 1
+    else :
+        impar += 1
+print()
+print("resultados:")
+print(f"-Positivos: {positivo}\n-Negativos: {negativo}\n-Pares: {par}\n-Impares: {impar}")
+
