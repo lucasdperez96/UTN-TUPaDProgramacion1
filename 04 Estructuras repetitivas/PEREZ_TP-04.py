@@ -123,3 +123,42 @@ print()
 print("resultados:")
 print(f"-Positivos: {positivo}\n-Negativos: {negativo}\n-Pares: {par}\n-Impares: {impar}")
 
+# 9) Elabora un programa que permita al usuario ingresar 100 números enteros y luego calcule la
+# media de esos valores. (Nota: puedes probar el programa con una cantidad menor, pero debe
+# poder procesar 100 números cambiando solo un valor).
+
+n = 100
+print(f"El siguiente programa calcula la media entre {n} numeros enteros ingresados por usted: ")
+resultado = 0
+
+for x in range( 0 , n ) :
+    numero = int(input("Ingrese un numero: "))
+    resultado += numero
+resultado /= n
+print()
+print(f"Resultado: {resultado}")
+
+# 10) Escribe un programa que invierta el orden de los dígitos de un número ingresado por el
+# usuario. Ejemplo: si el usuario ingresa 547, el programa debe mostrar 745
+
+# La forma sencilla de hacer este ejercicio es tomado los numeros como string, pero 
+# decidí tomar tanto el numero ingresado como el invertido como entero, ya que creo que, aunque no lo aclara, el ejercicio apunta a eso.
+
+print ("El siguiente programa invierte el orden de los digitos de un numero ingresado por usted: ")
+numero = int(input("Ingrese un numero: "))
+invertido=0
+while numero >= 10 :
+    # Me quedo el resto de dividir por diez (Ultima cifra)
+    invertido += numero % 10
+    # Multiplico por diez (agrega un digito para sumer el siguiente)
+    invertido *= 10
+    # Elimino del nro original el digito ya procesado
+    numero //= 10
+
+# Ultima suma que me queda fuera del ciclo
+invertido += numero
+
+print (invertido)
+
+# La desventaja de este metodo (usando enteros y no string) es que si el usuario ingresa un nro terminado en cero
+# al darlo vuelta se pierde por ser un cero a la izquierda.
