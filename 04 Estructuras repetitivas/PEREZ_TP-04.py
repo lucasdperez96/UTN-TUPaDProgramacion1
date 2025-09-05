@@ -10,3 +10,14 @@
 
 for x in range(101):
     print(x)
+
+# 2) Desarrolla un programa que solicite al usuario un número entero y determine la cantidad de
+# dígitos que contiene.
+
+num = int(input("Ingrese un numero entero:"))
+digitos = 1
+while num >= 10 :
+    num = num / 10
+    digitos+=1
+
+print("cantidad de digitos del numero ingresado: ", digitos)
