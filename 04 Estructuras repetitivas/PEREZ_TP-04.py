@@ -67,3 +67,29 @@ while(numero != numeroAleatorio):
     count+=1
     numero=int(input("Ingrese un numero: "))
 print(f"Correcto! el numero era {numeroAleatorio}, usted realizó {count} intento(s)." )
+
+# 6) Desarrolla un programa que imprima en pantalla todos los números pares comprendidos
+# entre 0 y 100, en orden decreciente.
+
+for x in range(100,0,-2) :
+    print(x)
+
+# 7) Crea un programa que calcule la suma de todos los números comprendidos entre 0 y un
+# número entero positivo indicado por el usuario.
+
+print("Suma de enteros positivos:\nEste rograma calcula la suma de todos los numeros comprendidos entre cero y un numo ingresado por usted")
+numero = int(input("Ingrese un numero: "))
+strSuma="0"
+suma = 0
+
+for x in range(1,numero):
+    strSuma+=" + " + str(x)
+    suma+=x
+
+# El enunciado no aclara si el numero ingresado debe formar parte de la suma
+# Yo decidí incluirlo
+strSuma+=" + " + str(numero)
+suma+=numero
+
+print(f"Resultado:\n{strSuma} = {suma}")
+
